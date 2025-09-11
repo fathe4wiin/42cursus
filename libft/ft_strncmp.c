@@ -6,7 +6,7 @@
 /*   By: fathe4wiin <fathe4wiin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 18:39:11 by fathe4wiin        #+#    #+#             */
-/*   Updated: 2025/09/10 19:06:07 by fathe4wiin       ###   ########.fr       */
+/*   Updated: 2025/09/10 22:40:18 by fathe4wiin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strncmp(char *s1, char *s2, size_t n)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (i < n)
