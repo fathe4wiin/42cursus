@@ -6,7 +6,7 @@
 /*   By: fathe4wiin <fathe4wiin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 22:42:12 by fathe4wiin        #+#    #+#             */
-/*   Updated: 2025/09/13 18:54:37 by fathe4wiin       ###   ########.fr       */
+/*   Updated: 2025/09/14 18:27:57 by fathe4wiin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stddef.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 void			*ft_memset(void *ptr, int value, size_t num);
 int				ft_isdigit(char c);
