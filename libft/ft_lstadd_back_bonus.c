@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fathe4wiin <fathe4wiin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/08 17:18:24 by bfathi            #+#    #+#             */
-/*   Updated: 2025/09/14 21:02:05 by fathe4wiin       ###   ########.fr       */
+/*   Created: 2025/09/14 20:08:46 by fathe4wiin        #+#    #+#             */
+/*   Updated: 2025/09/14 20:18:39 by fathe4wiin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+void ft_lstadd_back(t_list **lst, t_list *new)
 {
-	int	i;
+	t_list *node = *lst;
+	while (node->next != NULL)
+	{
+		node = node->next;
+	}
+	node->next = new;
+	new->next = NULL;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
 }

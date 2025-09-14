@@ -1,23 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fathe4wiin <fathe4wiin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/08 17:18:24 by bfathi            #+#    #+#             */
-/*   Updated: 2025/09/14 21:02:05 by fathe4wiin       ###   ########.fr       */
+/*   Created: 2025/09/14 20:21:23 by fathe4wiin        #+#    #+#             */
+/*   Updated: 2025/09/14 20:22:48 by fathe4wiin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
+void ft_lstdelone(t_list *lst, void (*del)(void *));
