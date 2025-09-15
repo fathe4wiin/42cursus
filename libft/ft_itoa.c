@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fathe4wiin <fathe4wiin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: bfathi <bfathi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/14 15:27:49 by fathe4wiin        #+#    #+#             */
-/*   Updated: 2025/09/14 18:29:35 by fathe4wiin       ###   ########.fr       */
+/*   Updated: 2025/09/15 21:11:06 by bfathi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *fill_str(int nb, int i, int neg)
+char	*fill_str(int nb, int i, int neg)
 {
-	char *res;
-	int j;
+	char	*res;
+	int		j;
 
 	j = 0;
 	if (nb == 0)
@@ -23,7 +23,7 @@ char *fill_str(int nb, int i, int neg)
 		res = malloc(2 * sizeof(char));
 		res[0] = '0';
 		res[1] = '\0';
-		return res;
+		return (res);
 	}
 	res[i] = '\0';
 	i--;
@@ -35,15 +35,15 @@ char *fill_str(int nb, int i, int neg)
 		nb /= 10;
 		i--;
 	}
-	return res;
+	return (res);
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	int nb;
-	int len;
-	char *res;
-	int neg;
+	int		nb;
+	int		len;
+	char	*res;
+	int		neg;
 
 	len = 0;
 	neg = 1;
@@ -61,8 +61,7 @@ char *ft_itoa(int n)
 	}
 	res = malloc((len + 1) * sizeof(char));
 	res = fill_str(n, len, neg);
-	return res;
-
+	return (res);
 }
 
 // #include <stdio.h>

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fathe4wiin <fathe4wiin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: bfathi <bfathi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 16:25:02 by fathe4wiin        #+#    #+#             */
-/*   Updated: 2025/09/13 16:55:05 by fathe4wiin       ###   ########.fr       */
+/*   Updated: 2025/09/15 21:15:41 by bfathi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 			res[len++] = s1[i];
 		i++;
 	}
-    res[len] = '\0';
-    return res;
+	res[len] = '\0';
+	return (res);
 }

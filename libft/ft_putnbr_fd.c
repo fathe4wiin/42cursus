@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fathe4wiin <fathe4wiin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: bfathi <bfathi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/14 18:38:16 by fathe4wiin        #+#    #+#             */
-/*   Updated: 2025/09/14 18:55:54 by fathe4wiin       ###   ########.fr       */
+/*   Updated: 2025/09/15 21:15:19 by bfathi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putchar_fd__(char c, int fd)
+void	ft_putchar_fd__(char c, int fd)
 {
 	write(fd, &c, 1);
 }
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned int nb;
+	unsigned int	nb;
 
 	if (n < 0)
 	{
