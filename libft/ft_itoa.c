@@ -6,7 +6,7 @@
 /*   By: bfathi <bfathi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/14 15:27:49 by fathe4wiin        #+#    #+#             */
-/*   Updated: 2025/09/15 21:11:06 by bfathi           ###   ########.fr       */
+/*   Updated: 2025/09/15 21:19:31 by bfathi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,9 @@ char	*ft_itoa(int n)
 	return (res);
 }
 
-// #include <stdio.h>
+#include <stdio.h>
 
-// int main(void)
-// {
-// 	printf("%s", ft_itoa(0));
-// }
+int main(void)
+{
+	printf("%s", ft_itoa(-4512));
+}
