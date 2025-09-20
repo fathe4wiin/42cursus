@@ -3,36 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fathe4wiin <fathe4wiin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: bfathi <bfathi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 18:40:45 by fathe4wiin        #+#    #+#             */
-/*   Updated: 2025/09/18 18:57:03 by fathe4wiin       ###   ########.fr       */
+/*   Updated: 2025/09/20 17:40:15 by bfathi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list *ptr;
-	t_list *res;
-	t_list *h_ptr;
+	t_list	*res;
+	t_list	*new_node;
+	void	*content;
 
-	ptr = lst;
-	h_ptr = res;
-	while (ptr->next != NULL)
+	if (!lst || !f)
+		return (NULL);
+	res = NULL;
+	while (lst)
 	{
-		h_ptr = f(ptr);
-		if (!h_ptr)
+		content = f(lst->content);
+		new_node = ft_lstnew(content);
+		if (!new_node)
 		{
-			del(h_ptr);
-			ptr = ptr->next;
+			del(content);
+			ft_lstclear(&res, del);
+			return (NULL);
 		}
-		else
-		{
-			h_ptr = h_ptr->next;
-			ptr = ptr->next;
-		}
+		ft_lstadd_back(&res, new_node);
+		lst = lst->next;
 	}
-
+	return (res);
 }
