@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fathe4wiin <fathe4wiin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: bfathi <bfathi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 18:57:57 by fathe4wiin        #+#    #+#             */
-/*   Updated: 2025/09/11 19:11:13 by fathe4wiin       ###   ########.fr       */
+/*   Updated: 2025/09/26 02:51:25 by bfathi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,7 @@ char	*ft_strnstr(char *str, char *to_find, size_t n)
 	size_t	to_find_len;
 	size_t	i;
 
-	to_find_len = 0;
-	while (to_find[to_find_len])
-		to_find_len++;
+	to_find_len = ft_strlen(to_find);
 	if (to_find_len == 0)
 		return ((char *)str);
 	if (to_find_len > n)

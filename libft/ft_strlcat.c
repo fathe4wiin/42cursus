@@ -6,24 +6,20 @@
 /*   By: bfathi <bfathi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 20:01:40 by bfathi            #+#    #+#             */
-/*   Updated: 2025/09/21 18:44:41 by bfathi           ###   ########.fr       */
+/*   Updated: 2025/09/26 02:48:45 by bfathi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+size_t	ft_strlcat(char *dest, char *src, size_t size)
 {
-	unsigned int	destlen;
-	unsigned int	srclen;
-	unsigned int	i;
+	size_t	destlen;
+	size_t	srclen;
+	size_t	i;
 
-	destlen = 0;
-	while (dest[destlen])
-		destlen++;
-	srclen = 0;
-	while (src[srclen])
-		srclen++;
+	destlen = ft_strlen(dest);
+	srclen = ft_strlen(src);
 	if (size <= destlen)
 		return (size + srclen);
 	i = 0;
