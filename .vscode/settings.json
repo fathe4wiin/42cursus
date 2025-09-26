@@ -1,0 +1,11 @@
+{
+	"files.associations": {
+		"libft.h": "c"
+	},
+	"makefile.makefilePath": "${workspaceFolder}",
+	"makefile.additionalCompilerNames": [
+		"gcc"
+	],
+	"makefile.alwaysPostConfigure": false,
+	"makefile.alwaysPreConfigure": true
+}
