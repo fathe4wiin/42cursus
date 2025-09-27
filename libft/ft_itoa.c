@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bfathi <bfathi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: fathe4wiin <fathe4wiin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/14 15:27:49 by fathe4wiin        #+#    #+#             */
-/*   Updated: 2025/09/23 20:19:19 by bfathi           ###   ########.fr       */
+/*   Updated: 2025/09/27 21:09:50 by fathe4wiin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ char	*fill_str(int nb, int i, int neg)
 {
 	char	*res;
 
-	res = malloc((i + 1) * sizeof(char));
 	if (nb == 0)
 	{
 		res = malloc(2 * sizeof(char));
@@ -24,6 +23,9 @@ char	*fill_str(int nb, int i, int neg)
 		res[1] = '\0';
 		return (res);
 	}
+	res = malloc((i + 1) * sizeof(char));
+	if (!res)
+		return NULL;
 	res[i] = '\0';
 	i--;
 	if (neg == -1)
@@ -41,7 +43,7 @@ char	*ft_itoa(int n)
 {
 	int		nb;
 	int		len;
-	char	*res;
+	unsigned int nbr;
 	int		neg;
 
 	len = 0;
@@ -50,14 +52,22 @@ char	*ft_itoa(int n)
 	{
 		neg = -1;
 		len++;
-		n *= -1;
+		nbr = (unsigned)(-n);
 	}
-	nb = n;
+	else
+		nbr = (unsigned)n;
+	nb = nbr;
 	while (nb)
 	{
 		nb /= 10;
 		len++;
 	}
-	res = fill_str(n, len, neg);
-	return (res);
+	return (fill_str(nbr, len, neg));
+}
+
+#include <stdio.h>
+
+int main(void)
+{
+	printf("%s", ft_itoa(-2147483648));
 }
