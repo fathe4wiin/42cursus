@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bfathi <bfathi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: fathe4wiin <fathe4wiin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/14 18:34:43 by fathe4wiin        #+#    #+#             */
-/*   Updated: 2025/09/21 18:32:31 by bfathi           ###   ########.fr       */
+/*   Updated: 2025/09/28 16:57:23 by fathe4wiin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
 
+	if (!s)
+		return ;
 	i = 0;
 	while (s[i])
 	{
