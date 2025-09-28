@@ -6,13 +6,13 @@
 /*   By: fathe4wiin <fathe4wiin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/14 15:27:49 by fathe4wiin        #+#    #+#             */
-/*   Updated: 2025/09/27 21:09:50 by fathe4wiin       ###   ########.fr       */
+/*   Updated: 2025/09/28 16:40:30 by fathe4wiin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*fill_str(int nb, int i, int neg)
+char	*fill_str(unsigned int nb, int i, int neg)
 {
 	char	*res;
 
@@ -65,9 +65,9 @@ char	*ft_itoa(int n)
 	return (fill_str(nbr, len, neg));
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int main(void)
-{
-	printf("%s", ft_itoa(-2147483648));
-}
+// int main(void)
+// {
+// 	printf("%s", ft_itoa(-2147483648));
+// }
