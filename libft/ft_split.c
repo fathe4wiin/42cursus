@@ -6,7 +6,7 @@
 /*   By: fathe4wiin <fathe4wiin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 16:55:43 by fathe4wiin        #+#    #+#             */
-/*   Updated: 2025/09/14 15:27:05 by fathe4wiin       ###   ########.fr       */
+/*   Updated: 2025/09/28 17:00:15 by fathe4wiin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,57 +85,57 @@ char	**ft_split(char const *s, char c)
 	return (res);
 }
 
-// #include <stdio.h>
-// #include <stdlib.h>
-// #include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "libft.h"
 
-// int main(void)
-// {
-//     char *s;
-//     char delimiter;
-//     char **result;
-//     int i;
+int main(void)
+{
+    char *s;
+    char delimiter;
+    char **result;
+    int i;
 
-//     // Test 1
-//     s = "Hello World from 42";
-//     delimiter = ' ';
-//     result = ft_split(s, delimiter);
-//     printf("Original: \"%s\"\n", s);
-//     printf("Split results:\n");
-//     for (i = 0; result[i]; i++)
-//     {
-//         printf("[%d]: \"%s\"\n", i, result[i]);
-//         free(result[i]);
-//     }
-//     free(result);
-//     printf("\n");
+    // Test 1
+    s = "Hello World from 42";
+    delimiter = ' ';
+    result = ft_split(s, delimiter);
+    printf("Original: \"%s\"\n", s);
+    printf("Split results:\n");
+    for (i = 0; result[i]; i++)
+    {
+        printf("[%d]: \"%s\"\n", i, result[i]);
+        free(result[i]);
+    }
+    free(result);
+    printf("\n");
 
-//     // Test 2
-//     s = ",one,,two,three,";
-//     delimiter = ',';
-//     result = ft_split(s, delimiter);
-//     printf("Original: \"%s\"\n", s);
-//     printf("Split results:\n");
-//     for (i = 0; result[i]; i++)
-//     {
-//         printf("[%d]: \"%s\"\n", i, result[i]);
-//         free(result[i]);
-//     }
-//     free(result);
-//     printf("\n");
+    // Test 2
+    s = ",one,,two,three,";
+    delimiter = ',';
+    result = ft_split(s, delimiter);
+    printf("Original: \"%s\"\n", s);
+    printf("Split results:\n");
+    for (i = 0; result[i]; i++)
+    {
+        printf("[%d]: \"%s\"\n", i, result[i]);
+        free(result[i]);
+    }
+    free(result);
+    printf("\n");
 
-//     // Test 3
-//     s = "no_delimiters_here";
-//     delimiter = ',';
-//     result = ft_split(s, delimiter);
-//     printf("Original: \"%s\"\n", s);
-//     printf("Split results:\n");
-//     for (i = 0; result[i]; i++)
-//     {
-//         printf("[%d]: \"%s\"\n", i, result[i]);
-//         free(result[i]);
-//     }
-//     free(result);
+    // Test 3
+    s = "no_delimiters_here";
+    delimiter = ',';
+    result = ft_split(s, delimiter);
+    printf("Original: \"%s\"\n", s);
+    printf("Split results:\n");
+    for (i = 0; result[i]; i++)
+    {
+        printf("[%d]: \"%s\"\n", i, result[i]);
+        free(result[i]);
+    }
+    free(result);
 
-//     return (0);
-// }
+    return (0);
+}
