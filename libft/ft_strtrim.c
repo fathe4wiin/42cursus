@@ -6,7 +6,7 @@
 /*   By: fathe4wiin <fathe4wiin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 16:25:02 by fathe4wiin        #+#    #+#             */
-/*   Updated: 2025/10/08 20:28:58 by fathe4wiin       ###   ########.fr       */
+/*   Updated: 2025/10/08 21:05:38 by fathe4wiin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,9 +88,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (s1[i] && chr_in_str(s1[i], set))
 		i++;
 	while (s1[i] && j < len)
-	{
 		res[j++] = s1[i++];
-	}
 	res[j] = '\0';
 	return (res);
 }
