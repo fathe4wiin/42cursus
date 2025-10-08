@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bfathi <bfathi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: fathe4wiin <fathe4wiin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 16:25:02 by fathe4wiin        #+#    #+#             */
-/*   Updated: 2025/09/23 20:24:38 by bfathi           ###   ########.fr       */
+/*   Updated: 2025/10/08 20:28:58 by fathe4wiin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,30 +26,76 @@ int	chr_in_str(char c, const char *str)
 	return (0);
 }
 
+int	len_calc(const char *s1, const char *set)
+{
+	int	i;
+	int	len;
+
+	len = 0;
+	i = 0;
+	while (s1[i] && chr_in_str(s1[i], set))
+	{
+		i++;
+	}
+	while (s1[i])
+	{
+		i++;
+		len++;
+	}
+	i--;
+	while (len > 0 && chr_in_str(s1[i], set))
+	{
+		i--;
+		len--;
+	}
+	return (len);
+}
+
+void	ft_strcpyy(char *dest, const char *src)
+{
+	int	i;
+
+	i = 0;
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*res;
 	int		i;
+	int		j;
 	int		len;
 
-	i = 0;
-	while (s1[i])
+	if (!s1)
+		return (0);
+	if (!set)
 	{
-		if (!chr_in_str(s1[i], set))
-			len++;
-		i++;
+		res = malloc(ft_strlen(s1) + 1);
+		ft_strcpyy(res, s1);
+		return (res);
 	}
+	len = len_calc(s1, set);
 	res = malloc(len + 1);
 	if (!res)
 		return (0);
 	i = 0;
-	len = 0;
-	while (s1[i])
-	{
-		if (!chr_in_str(s1[i], set))
-			res[len++] = s1[i];
+	j = 0;
+	while (s1[i] && chr_in_str(s1[i], set))
 		i++;
+	while (s1[i] && j < len)
+	{
+		res[j++] = s1[i++];
 	}
-	res[len] = '\0';
+	res[j] = '\0';
 	return (res);
 }
+
+// int main(void)
+// {
+// 	ft_strtrim("    ", "  ");
+// }
