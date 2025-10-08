@@ -26,7 +26,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	i = 0;
 	while (s1 && s1[i])
 	{
-		res[len++] = s1[i++];		
+		res[len++] = s1[i++];
 	}
 	i = 0;
 	while (s2 && s2[i])

@@ -25,7 +25,7 @@ char	*fill_str(unsigned int nb, int i, int neg)
 	}
 	res = malloc((i + 1) * sizeof(char));
 	if (!res)
-		return NULL;
+		return (NULL);
 	res[i] = '\0';
 	i--;
 	if (neg == -1)
@@ -41,10 +41,10 @@ char	*fill_str(unsigned int nb, int i, int neg)
 
 char	*ft_itoa(int n)
 {
-	int		nb;
-	int		len;
-	unsigned int nbr;
-	int		neg;
+	int				nb;
+	int				len;
+	unsigned int	nbr;
+	int				neg;
 
 	len = 0;
 	neg = 1;
