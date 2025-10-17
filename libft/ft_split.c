@@ -3,14 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fathe4wiin <fathe4wiin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: bfathi <bfathi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 16:55:43 by fathe4wiin        #+#    #+#             */
-/*   Updated: 2025/10/06 10:58:43 by fathe4wiin       ###   ########.fr       */
+/*   Updated: 2025/10/16 22:30:30 by bfathi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	skip_index(int *i, int c, const char *s, int setting)
+{
+	if (setting == 1)
+	{
+		while (s[*i] && s[*i] == c)
+			(*i)++;
+	}
+	if (setting == 2)
+	{
+		while (s[*i] && s[*i] != c)
+			(*i)++;
+	}
+}
+
+char	**freeing(char **str, int i)
+{
+	while (i >= 0)
+	{
+		free(str[i]);
+		i--;
+	}
+	return (str);
+}
 
 int	count_words(const char *str, char c)
 {
@@ -62,26 +86,26 @@ char	*extract_words(const char *str, int *i, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**res;
-	int		words;
 	int		i;
 	int		j;
 
 	if (!s)
 		return (NULL);
-	words = count_words(s, c);
-	res = malloc((words + 1) * sizeof(char *));
+	res = malloc((count_words(s, c) + 1) * sizeof(char *));
 	if (!res)
 		return (0);
 	i = 0;
 	j = 0;
 	while (s[i])
 	{
-		while (s[i] && s[i] == c)
-			i++;
+		skip_index(&i, c, s, 1);
 		if (s[i] && s[i] != c)
-			res[j++] = extract_words(s, &i, c);
-		while (s[i] && s[i] != c)
-			i++;
+		{
+			res[j] = extract_words(s, &i, c);
+			if (res[j++] == 0)
+				return (freeing(res, j));
+		}
+		skip_index(&i, c, s, 2);
 	}
 	res[j] = 0;
 	return (res);
