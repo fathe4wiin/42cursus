@@ -6,7 +6,7 @@
 /*   By: bfathi <bfathi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 18:35:41 by fathe4wiin        #+#    #+#             */
-/*   Updated: 2025/09/21 18:17:25 by bfathi           ###   ########.fr       */
+/*   Updated: 2025/10/18 10:50:02 by bfathi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	if (!lst || !f)
 		return ;
 	ptr = lst;
-	while (ptr->next != NULL)
+	while (ptr != NULL)
 	{
-		f(ptr);
+		f(ptr->content);
 		ptr = ptr->next;
 	}
 }

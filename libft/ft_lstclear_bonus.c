@@ -6,7 +6,7 @@
 /*   By: bfathi <bfathi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 19:38:20 by bfathi            #+#    #+#             */
-/*   Updated: 2025/09/21 18:16:30 by bfathi           ###   ########.fr       */
+/*   Updated: 2025/10/18 11:12:37 by bfathi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	{
 		ptr = *lst;
 		*lst = (*lst)->next;
-		del((ptr)->content);
+		del(ptr->content);
 		free(ptr);
 	}
 }

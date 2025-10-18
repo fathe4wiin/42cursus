@@ -6,7 +6,7 @@
 /*   By: bfathi <bfathi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 18:57:57 by fathe4wiin        #+#    #+#             */
-/*   Updated: 2025/10/17 16:51:06 by bfathi           ###   ########.fr       */
+/*   Updated: 2025/10/18 11:38:13 by bfathi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strnstr(char *str, char *to_find, size_t n)
 	size_t	to_find_len;
 	size_t	i;
 	size_t	str_len;
-	
+
 	str_len = ft_strlen(str);
 	(void)str_len;
 	to_find_len = ft_strlen(to_find);
@@ -39,5 +39,4 @@ char	*ft_strnstr(char *str, char *to_find, size_t n)
 // {
 // 	char *res = ft_strnstr("Trouverez vous Charly dans cette phrase?", "Charly",
 // 			18);
-// 			} 
-
+// 			}
