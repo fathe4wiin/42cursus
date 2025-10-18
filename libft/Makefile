@@ -13,8 +13,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
-# bonus: $(BOBJS)
-# 	$(AR) $(NAME) $(BOBJS)
+bonus: $(BOBJS)
+	$(AR) $(NAME) $(BOBJS)
 
 %.o: %.c 
 	$(CC) $(CFLAGS) -c $< -o $@
