@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fathe4wiin <fathe4wiin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: bfathi <bfathi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/14 15:27:49 by fathe4wiin        #+#    #+#             */
-/*   Updated: 2025/09/28 16:40:30 by fathe4wiin       ###   ########.fr       */
+/*   Updated: 2025/10/19 23:10:41 by bfathi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*fill_str(unsigned int nb, int i, int neg)
 	if (nb == 0)
 	{
 		res = malloc(2 * sizeof(char));
+		if (!res)
+			return (0);
 		res[0] = '0';
 		res[1] = '\0';
 		return (res);

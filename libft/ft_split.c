@@ -6,34 +6,22 @@
 /*   By: bfathi <bfathi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 16:55:43 by fathe4wiin        #+#    #+#             */
-/*   Updated: 2025/10/18 11:44:52 by bfathi           ###   ########.fr       */
+/*   Updated: 2025/10/19 23:08:58 by bfathi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-void	skip_index(int *i, int c, const char *s, int setting)
-{
-	if (setting == 1)
-	{
-		while (s[*i] && s[*i] == c)
-			(*i)++;
-	}
-	if (setting == 2)
-	{
-		while (s[*i] && s[*i] != c)
-			(*i)++;
-	}
-}
-
-char	**freeing(char **str, int i)
+char	**free_all(char **str, int i)
 {
 	while (i >= 0)
 	{
 		free(str[i]);
 		i--;
 	}
-	return (str);
+	free(str);
+	return (0);
 }
 
 int	count_words(const char *str, char c)
@@ -60,25 +48,18 @@ int	count_words(const char *str, char c)
 char	*extract_words(const char *str, int *i, char c)
 {
 	int		j;
-	char	*res;
 	int		word_len;
+	char	*res;
 
+	word_len = 0;
+	while (str[*i + word_len] && str[*i + word_len] != c)
+		word_len++;
+	res = malloc(word_len + 1);
+	if (!res)
+		return (0);
 	j = 0;
 	while (str[*i] && str[*i] != c)
-	{
-		word_len = 0;
-		while (str[*i] && str[*i] != c)
-		{
-			(*i)++;
-			word_len++;
-		}
-		*i -= word_len;
-		res = malloc(word_len + 1);
-		if (!res)
-			return (0);
-		while (str[*i] && str[*i] != c)
-			res[j++] = str[(*i)++];
-	}
+		res[j++] = str[(*i)++];
 	res[j] = '\0';
 	return (res);
 }
@@ -98,14 +79,15 @@ char	**ft_split(char const *s, char c)
 	j = 0;
 	while (s[i])
 	{
-		skip_index(&i, c, s, 1);
+		while (s[i] && s[i] == c)
+			i++;
 		if (s[i] && s[i] != c)
 		{
 			res[j] = extract_words(s, &i, c);
-			if (res[j++] == 0)
-				return (freeing(res, j));
+			if (!res[j])
+				return (free_all(res, j - 1));
+			j++;
 		}
-		skip_index(&i, c, s, 2);
 	}
 	res[j] = 0;
 	return (res);
@@ -114,6 +96,11 @@ char	**ft_split(char const *s, char c)
 // #include <stdio.h>
 // #include <stdlib.h>
 // #include "libft.h"
+
+// int main(void)
+// {
+// 	ft_split("hello", '\0');
+// }
 
 // int main(void)
 // {
