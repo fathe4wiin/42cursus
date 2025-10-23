@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bfathi <bfathi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/10 18:28:03 by fathe4wiin        #+#    #+#             */
-/*   Updated: 2025/10/16 15:41:32 by bfathi           ###   ########.fr       */
+/*   Created: 2025/10/20 21:17:26 by bfathi            #+#    #+#             */
+/*   Updated: 2025/10/22 02:22:31 by bfathi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(char *str, int c)
+char	*ft_strrchr(const char *str, int c)
 {
 	int	i;
 
@@ -23,7 +23,7 @@ char	*ft_strrchr(char *str, int c)
 	while (i >= 0)
 	{
 		if (str[i] == c)
-			return (&str[i]);
+			return ((char *)&str[i]);
 		i--;
 	}
 	return (0);

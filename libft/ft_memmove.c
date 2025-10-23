@@ -5,12 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bfathi <bfathi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/08 18:44:04 by bfathi            #+#    #+#             */
-/*   Updated: 2025/10/16 19:34:16 by bfathi           ###   ########.fr       */
+/*   Created: 2025/10/20 21:15:00 by bfathi            #+#    #+#             */
+/*   Updated: 2025/10/22 03:18:44 by bfathi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
@@ -18,11 +19,11 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char	*d;
 	size_t			i;
 
-	if (!dest && !src && n > 0)
-		return (NULL);
 	d = (unsigned char *)dest;
 	s = (unsigned char *)src;
 	i = -1;
+	if (d == s)
+		return d;
 	if (d < s)
 	{
 		while (++i < n)
@@ -35,6 +36,14 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+
+// int main(void)
+// {
+// 	char a[10] = "eaaaa";
+// 	char * p = (char *) ft_memmove(((void*)0), ((void*)0), 5);
+// 	// char * p = (char *)memmove(a, a, 2);
+// 	printf("%s \n %s \n ", a , p);
+// }
 
 // #include <stdio.h>
 // #include <string.h>

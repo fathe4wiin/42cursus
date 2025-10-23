@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fathe4wiin <fathe4wiin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: bfathi <bfathi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/13 16:25:02 by fathe4wiin        #+#    #+#             */
-/*   Updated: 2025/10/08 21:05:38 by fathe4wiin       ###   ########.fr       */
+/*   Created: 2025/10/20 21:17:29 by bfathi            #+#    #+#             */
+/*   Updated: 2025/10/22 02:41:56 by bfathi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	chr_in_str(char c, const char *str)
+static int	chr_in_str(char c, const char *str)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ int	chr_in_str(char c, const char *str)
 	return (0);
 }
 
-int	len_calc(const char *s1, const char *set)
+static int	len_calc(const char *s1, const char *set)
 {
 	int	i;
 	int	len;
@@ -51,19 +51,6 @@ int	len_calc(const char *s1, const char *set)
 	return (len);
 }
 
-void	ft_strcpyy(char *dest, const char *src)
-{
-	int	i;
-
-	i = 0;
-	while (src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*res;
@@ -74,11 +61,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!s1)
 		return (0);
 	if (!set)
-	{
-		res = malloc(ft_strlen(s1) + 1);
-		ft_strcpyy(res, s1);
-		return (res);
-	}
+		return (ft_strdup(s1));
 	len = len_calc(s1, set);
 	res = malloc(len + 1);
 	if (!res)

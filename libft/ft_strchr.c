@@ -5,15 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bfathi <bfathi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/08 20:36:52 by bfathi            #+#    #+#             */
-/*   Updated: 2025/10/16 15:39:39 by bfathi           ###   ########.fr       */
+/*   Created: 2025/10/20 21:16:45 by bfathi            #+#    #+#             */
+/*   Updated: 2025/10/22 02:20:35 by bfathi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <string.h>
 
-char	*ft_strchr(char *str, int c)
+char	*ft_strchr(const char *str, int c)
 {
 	int	i;
 
@@ -22,11 +22,11 @@ char	*ft_strchr(char *str, int c)
 	while (str[i])
 	{
 		if (c == str[i])
-			return (&str[i]);
+			return ((char *)&str[i]);
 		i++;
 	}
 	if (c == '\0')
-		return (&str[i]);
+		return ((char *)&str[i]);
 	return (0);
 }
 

@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bfathi <bfathi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/08 19:57:34 by bfathi            #+#    #+#             */
-/*   Updated: 2025/10/19 22:45:28 by bfathi           ###   ########.fr       */
+/*   Created: 2025/10/20 21:17:06 by bfathi            #+#    #+#             */
+/*   Updated: 2025/10/22 02:16:22 by bfathi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, char *src, size_t size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	srclen;
 	size_t	i;

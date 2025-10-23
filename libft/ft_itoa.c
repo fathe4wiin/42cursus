@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bfathi <bfathi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/14 15:27:49 by fathe4wiin        #+#    #+#             */
-/*   Updated: 2025/10/19 23:10:41 by bfathi           ###   ########.fr       */
+/*   Created: 2025/10/20 21:13:48 by bfathi            #+#    #+#             */
+/*   Updated: 2025/10/21 15:48:05 by bfathi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*fill_str(unsigned int nb, int i, int neg)
+static char	*fill_str(unsigned int nb, int i, int neg)
 {
 	char	*res;
 

@@ -5,15 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bfathi <bfathi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/10 18:57:57 by fathe4wiin        #+#    #+#             */
-/*   Updated: 2025/10/19 23:03:41 by bfathi           ###   ########.fr       */
+/*   Created: 2025/10/20 21:17:22 by bfathi            #+#    #+#             */
+/*   Updated: 2025/10/22 02:21:41 by bfathi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <strings.h>
 
-char	*ft_strnstr(char *str, char *to_find, size_t n)
+char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 {
 	size_t	to_find_len;
 	size_t	i;
@@ -25,7 +25,7 @@ char	*ft_strnstr(char *str, char *to_find, size_t n)
 	while (*(str + i) && i + to_find_len - 1 < n)
 	{
 		if (ft_strncmp(str + i, to_find, to_find_len) == 0)
-			return (str + i);
+			return ((char *)str + i);
 		i++;
 	}
 	return (0);

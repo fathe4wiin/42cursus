@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bfathi <bfathi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/13 15:51:05 by fathe4wiin        #+#    #+#             */
-/*   Updated: 2025/10/20 18:12:55 by bfathi           ###   ########.fr       */
+/*   Created: 2025/10/20 21:12:54 by bfathi            #+#    #+#             */
+/*   Updated: 2025/10/22 22:26:31 by bfathi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	if (nmemb != 0 && size > SIZE_MAX / nmemb)
 		return (NULL);
 	res = malloc(nmemb * size);
-	if (!res)
+	if (!res && (nmemb * size != 0))
 		return (NULL);
-	ft_bzero(res, size * nmemb);
+	ft_bzero(res, nmemb * size);
 	return (res);
 }

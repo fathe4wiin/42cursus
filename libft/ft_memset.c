@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fathe4wiin <fathe4wiin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: bfathi <bfathi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/08 17:21:09 by bfathi            #+#    #+#             */
-/*   Updated: 2025/09/10 22:39:57 by fathe4wiin       ###   ########.fr       */
+/*   Created: 2025/10/20 21:15:06 by bfathi            #+#    #+#             */
+/*   Updated: 2025/10/22 02:24:49 by bfathi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,3 +27,32 @@ void	*ft_memset(void *ptr, int value, size_t num)
 	}
 	return (ptr);
 }
+
+// int main(void)clear
+// {
+// 	int i = 0;
+// 	int *pt = &i;
+
+// 	unsigned char *ptr = (unsigned char *)pt;
+
+// 	ptr[0] = 0;
+// 	// ptr[2] = 1;
+// 	// ptr[3] = 1;
+// 	ptr[0] = ptr[0] + 1;
+// 	ptr[0] = ptr[0] + 2;
+// 	ptr[0] = ptr[0] + 4;
+// 	ptr[0] = ptr[0] + 64;
+// 	ptr[0] = ptr[0] + 128;
+// 	// ptr[0] = 199;
+// 	ptr[1] = 250;
+// 	ptr[2] = 255;
+// 	ptr[3] = 255;
+
+// 	// ft_memset(&ptr[0], 214, 1);
+// 	// ft_memset(&ptr[1], 255, 1);
+// 	// ft_memset(&ptr[2], 255, 1);
+// 	// ft_memset(&ptr[3], 255, 1);
+
+// 	printf("%d\n", i);
+
+// }
