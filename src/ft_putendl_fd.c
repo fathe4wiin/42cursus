@@ -6,7 +6,7 @@
 /*   By: bfathi <bfathi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 21:16:08 by bfathi            #+#    #+#             */
-/*   Updated: 2025/10/20 21:16:08 by bfathi           ###   ########.fr       */
+/*   Updated: 2025/10/24 06:39:02 by bfathi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_putendl_fd(char *s, int fd)
 	i = 0;
 	while (s[i])
 	{
-		write(fd, &s[i], 1);
+		ft_putchar_fd(s[i], fd);
 		i++;
 	}
 	write(fd, "\n", 1);

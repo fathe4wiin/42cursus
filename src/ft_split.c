@@ -6,14 +6,14 @@
 /*   By: bfathi <bfathi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 21:16:25 by bfathi            #+#    #+#             */
-/*   Updated: 2025/10/21 15:50:38 by bfathi           ###   ########.fr       */
+/*   Updated: 2025/10/24 06:54:57 by bfathi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static char	**free_all(char **str, int i)
+static char	**free_koulchi(char **str, int i)
 {
 	while (i >= 0)
 	{
@@ -85,7 +85,7 @@ char	**ft_split(char const *s, char c)
 		{
 			res[j] = extract_words(s, &i, c);
 			if (!res[j])
-				return (free_all(res, j - 1));
+				return (free_koulchi(res, j - 1));
 			j++;
 		}
 	}

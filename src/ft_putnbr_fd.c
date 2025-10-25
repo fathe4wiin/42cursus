@@ -6,7 +6,7 @@
 /*   By: bfathi <bfathi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 21:16:13 by bfathi            #+#    #+#             */
-/*   Updated: 2025/10/20 21:16:14 by bfathi           ###   ########.fr       */
+/*   Updated: 2025/10/24 06:39:30 by bfathi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_putnbr_fd(int n, int fd)
 
 	if (n < 0)
 	{
-		write(fd, "-", 1);
+		ft_putchar_fd('-', fd);
 		nb = (unsigned)(-n);
 	}
 	else

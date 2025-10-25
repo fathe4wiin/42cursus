@@ -6,13 +6,13 @@
 /*   By: bfathi <bfathi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 21:16:59 by bfathi            #+#    #+#             */
-/*   Updated: 2025/10/21 15:50:36 by bfathi           ###   ########.fr       */
+/*   Updated: 2025/10/24 06:54:11 by bfathi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_strlen_(const char *str)
+static size_t	ft_strlen_ma_ket_segfaultich(const char *str)
 {
 	size_t	i;
 
@@ -30,7 +30,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		i;
 	int		len;
 
-	len = ft_strlen_(s1) + ft_strlen_(s2);
+	len = ft_strlen_ma_ket_segfaultich(s1) + ft_strlen_ma_ket_segfaultich(s2);
 	res = malloc(len + 1);
 	if (!res)
 		return (0);
